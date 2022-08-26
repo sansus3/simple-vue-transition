@@ -1,47 +1,44 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+import { ref } from 'vue';
+
+export default {
+  setup(){
+    const show = ref(false);
+    return {
+      show,
+    }
+  }
+}
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h1>Suspense</h1>
+    <button @click="show = !show" type="button">
+      Click me {{show}}
+    </button>
+    <Transition>
+      <p v-if="show">Transition 🙋‍♀️
+      <div>
+        &lt; Transition> is a <strong>built-in component</strong>: this means it is available in any component's template without having to register it. It can be used to apply enter and leave animations on elements or components passed to it via its default slot. The enter or leave can be triggered by one of the following:
+          <ul>
+            <li>Conditional rendering via v-if</li>
+            <li>Conditional display via v-show</li>
+            <li>Dynamic components toggling via the &lt;component> special element</li>
+          </ul>
+      </div>
+      </p>
+    </Transition>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
