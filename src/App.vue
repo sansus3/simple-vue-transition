@@ -13,7 +13,9 @@ export default {
 <template>
   <div>
     <h1 class="text-center text-3xl font-bold underline">Suspense</h1>
-    <button @click="show = !show" type="button">
+    <button @click="show = !show" 
+    type="button" 
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
       Click me {{show}}
     </button>
     <Transition>
