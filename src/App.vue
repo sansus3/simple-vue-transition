@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
   <div>
-    <h1>Suspense</h1>
+    <h1 class="text-center text-3xl font-bold underline">Suspense</h1>
     <button @click="show = !show" type="button">
       Click me {{show}}
     </button>
