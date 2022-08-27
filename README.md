@@ -14,6 +14,8 @@ For applying animations when an element or component is entering and leaving the
     - v-leave-from
     - v-leave-to
     - v-leave-active
+- Clases personalizablez del componente Transition
+    -[Enlace](https://vuejs.org/guide/built-ins/transition.html#custom-transition-classes)
 
 [Enlace](https://vuejs.org/guide/built-ins/transition.html#css-based-transitions)
 
